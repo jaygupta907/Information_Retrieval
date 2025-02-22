@@ -1,7 +1,6 @@
 from util import *
 
-# Add your import statements here
-
+from nltk.tokenize import sent_tokenize
 
 
 
@@ -22,7 +21,7 @@ class SentenceSegmentation():
 			A list of strings where each string is a single sentence
 		"""
 
-		segmentedText = None
+		segmentedText = text.split('. ')
 
 		#Fill in code here
 
@@ -47,7 +46,7 @@ class SentenceSegmentation():
 			A list of strings where each strin is a single sentence
 		"""
 
-		segmentedText = None
+		segmentedText = sent_tokenize(text)
 
 		#Fill in code here
 		

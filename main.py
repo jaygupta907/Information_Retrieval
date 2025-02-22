@@ -5,20 +5,10 @@ from stopwordRemoval import StopwordRemoval
 
 import argparse
 import json
-from sys import version_info
+import nltk
 
-
-# Input compatibility for Python 2 and Python 3
-if version_info.major == 3:
-    pass
-elif version_info.major == 2:
-    try:
-        input = raw_input
-    except NameError:
-        pass
-else:
-    print ("Unknown python version - input function not safe")
-
+nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 class SearchEngine:
 

@@ -1,7 +1,13 @@
 from util import *
 
-# Add your import statements here
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize, TreebankWordTokenizer
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+import string
 
+nltk.download('punkt')
+nltk.download('stopwords')
 
 
 
@@ -23,8 +29,8 @@ class StopwordRemoval():
 			A list of lists where each sub-list is a sequence of tokens
 			representing a sentence with stopwords removed
 		"""
-
-		stopwordRemovedText = None
+		stop_words = set(stopwords.words('english'))
+		stopwordRemovedText = [[word for word in sentence if word.lower() not in stop_words] for sentence in text]
 
 		#Fill in code here
 

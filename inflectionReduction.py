@@ -1,6 +1,6 @@
 from util import *
+from nltk.stem import PorterStemmer
 
-# Add your import statements here
 
 
 
@@ -23,8 +23,8 @@ class InflectionReduction:
 			A list of lists where each sub-list is a sequence of
 			stemmed/lemmatized tokens representing a sentence
 		"""
-
-		reducedText = None
+		stemmer = PorterStemmer()
+		reducedText = [[stemmer.stem(word) for word in sentence] for sentence in text]
 
 		#Fill in code here
 		

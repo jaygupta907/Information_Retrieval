@@ -1,7 +1,5 @@
 from util import *
-
-# Add your import statements here
-
+from nltk.tokenize import TreebankWordTokenizer
 
 
 
@@ -22,7 +20,7 @@ class Tokenization():
 			A list of lists where each sub-list is a sequence of tokens
 		"""
 
-		tokenizedText = None
+		tokenizedText = [sentence.split() for sentence in text]
 
 		#Fill in code here
 
@@ -44,8 +42,8 @@ class Tokenization():
 		list
 			A list of lists where each sub-list is a sequence of tokens
 		"""
-
-		tokenizedText = None
+		tokenizer = TreebankWordTokenizer()
+		tokenizedText = [tokenizer.tokenize(sentence) for sentence in text]
 
 		#Fill in code here
 
