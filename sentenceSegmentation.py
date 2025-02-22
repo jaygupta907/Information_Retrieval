@@ -1,7 +1,7 @@
 from util import *
 
 from nltk.tokenize import sent_tokenize
-
+import re
 
 
 class SentenceSegmentation():
@@ -20,11 +20,13 @@ class SentenceSegmentation():
 		list
 			A list of strings where each string is a single sentence
 		"""
-
-		segmentedText = text.split('. ')
-
-		#Fill in code here
-
+		
+		# Split the text using the delimiters '.', '!', '?'
+		split_text = re.split(r'[.!?]\s', text)
+	
+		# Remove empty strings and strip spaces from the sentences
+		segmentedText = [s.strip() for s in split_text if s.strip()]
+		
 		return segmentedText
 
 
@@ -47,7 +49,4 @@ class SentenceSegmentation():
 		"""
 
 		segmentedText = sent_tokenize(text)
-
-		#Fill in code here
-		
 		return segmentedText

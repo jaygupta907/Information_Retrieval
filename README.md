@@ -20,6 +20,7 @@ main.py [-custom] [-dataset DATASET FOLDER] [-out_folder OUTPUT FOLDER]
 ```
 When the -custom flag is passed, the system will take a query from the user as input. When the flag is not passed, all the queries in the Cranfield dataset are considered, for example:
 
+```
 python main.py -custom
 Enter query below
 Papers on Aerodynamics
